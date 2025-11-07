@@ -169,10 +169,86 @@
       <a href="#contact">Contact</a>
     </nav>
    <!-- 📞 Bouton d'appel flottant -->
+<!-- 📞 Bouton d'appel flottant -->
 <a href="tel:+33753696428" class="phone-box">
   <i class="fa-solid fa-phone"></i>
   <span>07 53 69 64 28</span>
 </a>
+
+<style>
+  /* ---- Style principal du bouton ---- */
+  .phone-box {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    animation: pulse 1.8s infinite;
+  }
+
+  .phone-box i {
+    font-size: 1.3em;
+    background: #fff;
+    color: #28a745;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .phone-box:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #34d058, #2eb82e);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ---- Animation de pulsation ---- */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.5);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+  }
+
+  /* ---- Responsive Mobile ---- */
+  @media (max-width: 768px) {
+    .phone-box {
+      bottom: 15px;
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 1em;
+      padding: 12px 18px;
+      width: auto;
+      max-width: 90%;
+      justify-content: center;
+    }
+    .phone-box span {
+      font-size: 1em;
+    }
+  }
+</style>
+
+<!-- Importer Font Awesome si non présent -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
 <style>
   /* ---- Bouton Téléphone ---- */
