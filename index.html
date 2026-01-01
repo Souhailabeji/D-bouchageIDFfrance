@@ -549,16 +549,16 @@ body {
       </p>
 
       <h3>FAQ – IDF Débouchage Canalisations Paris & Île-de-France</h3>
-      <p><strong>➡️ En combien de temps intervenez-vous ?</strong><br>
+      <p><strong> En combien de temps intervenez-vous ?</strong><br>
       En moyenne sous 30 minutes, 24h/24 et 7j/7, selon votre localisation.</p>
 
-      <p><strong>➡️ Quels sont vos tarifs ?</strong><br>
+      <p><strong> Quels sont vos tarifs ?</strong><br>
       Nos prix sont transparents et fixés selon la nature du bouchon. Devis gratuit sur simple appel.</p>
 
-      <p><strong>➡️ Intervenez-vous les week-ends ?</strong><br>
+      <p><strong> Intervenez-vous les week-ends ?</strong><br>
       Oui, nos équipes sont disponibles tous les jours, y compris les jours fériés.</p>
 
-      <p><strong>➡️ Proposez-vous un service d’urgence ?</strong><br>
+      <p><strong> Proposez-vous un service d’urgence ?</strong><br>
       Oui, nous assurons une astreinte pour toutes les urgences plomberie à Paris et en Île-de-France.</p>
     </div>
 
@@ -794,68 +794,7 @@ body {
 </style>
 
 
-  <!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contactez-nous</h2>
-  <p>Besoin d’une intervention immédiate ? Remplissez ce formulaire ou appelez-nous directement :</p>
-  
-  <a href="tel:+33753696428" class="phone-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Téléphone"> 07 53 69 64 28
-  </a>
-  
-  <form id="contactForm">
-    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-    <input type="email" id="email" name="email" placeholder="Votre email" required>
-    
-    <!-- Sélecteur de lieu -->
-    <label for="lieu">Choisissez votre lieu :</label>
-    <select id="lieu" name="lieu" required>
-      <option value="">-- Sélectionnez une ville --</option>
-      <option value="Paris">Paris</option>
-      <option value="Marseille">Marseille</option>
-      <option value="Lyon">Lyon</option>
-      <option value="Toulouse">Toulouse</option>
-      <option value="Nice">Nice</option>
-      <option value="Nantes">Nantes</option>
-      <option value="Strasbourg">Strasbourg</option>
-      <option value="Montpellier">Montpellier</option>
-      <option value="Bordeaux">Bordeaux</option>
-      <option value="Lille">Lille</option>
-      <option value="Rennes">Rennes</option>
-      <option value="Reims">Reims</option>
-      <option value="Le Havre">Le Havre</option>
-      <option value="Saint-Étienne">Saint-Étienne</option>
-      <option value="Toulon">Toulon</option>
-      <option value="Grenoble">Grenoble</option>
-    </select>
 
-    <textarea id="message" name="message" rows="4" placeholder="Décrivez votre problème..." required></textarea>
-    <button type="submit">Envoyer sur WhatsApp</button>
-  </form>
-</section>
-
-<script>
-  // Script pour rediriger vers WhatsApp avec message pré-rempli
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    // Récupération des valeurs du formulaire
-    let nom = document.getElementById("nom").value;
-    let email = document.getElementById("email").value;
-    let lieu = document.getElementById("lieu").value;
-    let message = document.getElementById("message").value;
-
-    // Construction du message WhatsApp
-    let texte = `Bonjour, je suis ${nom} (${email}), je suis à ${lieu}. Voici mon message : ${message}`;
-    let numero = "33753696428"; // numéro au format international (France = 33)
-    
-    // Lien WhatsApp
-    let url = `https://wa.me/${numero}?text=${encodeURIComponent(texte)}`;
-
-    // Redirection vers WhatsApp
-    window.open(url, "_blank");
-  });
-</script>
 
 
 <style>
@@ -939,41 +878,7 @@ body {
     outline: none;
   }
 
-  /* --- STYLE DU SELECT --- */
-  select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/32/32195.png');
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 18px;
-    cursor: pointer;
-  }
-
-  option {
-    color: #000000ff;
-    background: #ffffff;
-  }
-
-  /* --- Bouton --- */
-  button {
-    background-color: #d1c5afff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-  }
-
-  button:hover {
-    background-color:#f0d592ea;
-    transform: translateY(-2px);
-  }
-</style>
+  
 
 
   
@@ -1011,6 +916,7 @@ body {
 
 </body>
 </html>
+
 
 
 
