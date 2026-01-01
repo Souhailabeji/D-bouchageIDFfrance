@@ -368,16 +368,16 @@ body {
     <a href="#contact" class="btn">Demander une intervention</a>
   </section>
 
-  <!-- SERVICES -->
+<!-- SERVICES -->
 <section id="services" class="services">
   <h2>Nos Services</h2>
   <div class="service-container">
 
     <!-- Service 1 -->
     <div class="service-card">
-<img src="https://www.camionvidangeassainissement.com/2024/03/07/camion-vidange-alger/" 
-     alt="Débouchage canalisation IDF" 
-     class="service-img">
+      <img src="https://www.camionvidangeassainissement.com/wp-content/uploads/2024/03/camion-vidange-alger.jpg" 
+           alt="Débouchage canalisation IDF" 
+           class="service-img">
       <h3>Débouchage de canalisations</h3>
       <p>
         Nous assurons le débouchage complet de toutes vos canalisations : éviers, lavabos, douches, WC et réseaux extérieurs.  
@@ -388,7 +388,9 @@ body {
 
     <!-- Service 2 -->
     <div class="service-card">
-<img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Inspection caméra canalisation IDF" class="service-img">
+      <img src="https://www.camionvidangeassainissement.com/wp-content/uploads/2024/03/inspection-camera.jpg" 
+           alt="Inspection caméra canalisation IDF" 
+           class="service-img">
       <h3>Inspection par caméra</h3>
       <p>
         Avant toute intervention, notre équipe peut effectuer une inspection vidéo de vos canalisations.  
@@ -399,7 +401,9 @@ body {
 
     <!-- Service 3 -->
     <div class="service-card">
-<img src="https://raw.githubusercontent.com/username/repo/branch/7d3f6172-97d6-4c3e-a790-b76bdcd51cf1.jpeg" alt="Urgence 24h/24">
+      <img src="https://www.camionvidangeassainissement.com/wp-content/uploads/2024/03/urgence-debouchage.jpg" 
+           alt="Urgence 24h/24" 
+           class="service-img">
       <h3>Urgence 24h/24</h3>
       <p>
         Une canalisation bouchée au milieu de la nuit ? Pas de panique.  
@@ -411,6 +415,77 @@ body {
 
   </div>
 </section>
+
+<!-- CSS -->
+<style>
+.services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.service-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #ff6600; /* couleur vive pour attirer l'œil */
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .service-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+
 
 
 <style>
