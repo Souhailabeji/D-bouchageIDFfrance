@@ -195,36 +195,55 @@ nav a:hover {
 
 .hero {
   position: relative;
-  color: white;
-  padding: 130px 20px;
+  overflow: hidden;
+  height: 600px; /* adapte selon ton besoin */
   text-align: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0,0,0,0.2)),
-              url("https://images.unsplash.com/photo-1581578017423-5c4b4e8ef41f?auto=format&fit=crop&w=1400&q=80") top/cover no-repeat;
-  animation: changeBackground 15s infinite;
-  background-size: cover;
+  color: white;
 }
 
-@keyframes changeBackground {
-  0% {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2)),
-                      url("https://images.unsplash.com/photo-1581578017423-5c4b4e8ef41f?auto=format&fit=crop&w=1400&q=80");
-    background-position: top;
-  }
-  33% {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2)),
-                      url("https://images.unsplash.com/photo-1560448071-7b6f49f2c529?auto=format&fit=crop&w=1400&q=80");
-    background-position: top;
-  }
-  66% {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2)),
-                      url("https://images.unsplash.com/photo-1506266189393-2e9d17f5f0d7?auto=format&fit=crop&w=1400&q=80");
-    background-position: top;
-  }
-  100% {
-    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2)),
-                      url("https://images.unsplash.com/photo-1581578017423-5c4b4e8ef41f?auto=format&fit=crop&w=1400&q=80");
-    background-position: top;
-  }
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: top;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.hero-bg1 { 
+  background: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2)), 
+              url('https://images.unsplash.com/photo-1581578017423-5c4b4e8ef41f?auto=format&fit=crop&w=1400&q=80');
+  animation: fade 15s infinite; 
+  animation-delay: 0s;
+}
+
+.hero-bg2 { 
+  background: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2)), 
+              url('https://images.unsplash.com/photo-1560448071-7b6f49f2c529?auto=format&fit=crop&w=1400&q=80');
+  animation: fade 15s infinite; 
+  animation-delay: 5s;
+}
+
+.hero-bg3 { 
+  background: linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,0.2)), 
+              url('https://images.unsplash.com/photo-1506266189393-2e9d17f5f0d7?auto=format&fit=crop&w=1400&q=80');
+  animation: fade 15s infinite; 
+  animation-delay: 10s;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Animation fade */
+@keyframes fade {
+  0%, 33%, 100% { opacity: 0; }
+  11%, 22% { opacity: 1; }
 }
 
     /* SERVICES */
@@ -406,12 +425,19 @@ body {
 
   </header>
 
-  <!-- HERO -->
+ 
   <section class="hero">
+  <div class="hero-bg hero-bg1"></div>
+  <div class="hero-bg hero-bg2"></div>
+  <div class="hero-bg hero-bg3"></div>
+
+  <div class="hero-content">
     <h2>Débouchage rapide et efficace en Île-de-France</h2>
     <p>Disponible 7j/7 et 24h/24 – Intervention en moins de 30 minutes</p>
     <a href="#contact" class="btn">Demander une intervention</a>
-  </section>
+  </div>
+</section>
+
 
   <!-- SERVICES -->
 <section id="services" class="services">
@@ -877,6 +903,7 @@ body {
 
 </body>
 </html>
+
 
 
 
