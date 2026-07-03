@@ -808,173 +808,248 @@
     </div>
   </section>
 
- <!-- =========================
-     NOS RÉALISATIONS
-========================= -->
+ 
 
 <style>
 
 /*==========================
-    NOS RÉALISATIONS
+      NOS RÉALISATIONS
 ==========================*/
 
 .realisations{
     padding:90px 8%;
-    background:#f8fafc;
+    background:linear-gradient(180deg,#f8fbfd,#eef4f9);
 }
 
-.realisations .section-title{
+.section-title{
     text-align:center;
-    font-size:2.7rem;
-    color:#0f3d5e;
-    margin-bottom:15px;
+    font-size:2.8rem;
+    color:#0b3d5d;
     font-weight:700;
+    margin-bottom:15px;
 }
 
-.realisations .section-sub{
-    text-align:center;
+.section-sub{
     max-width:850px;
-    margin:0 auto 60px;
-    color:#6b7280;
-    font-size:1.05rem;
+    margin:auto;
+    text-align:center;
+    color:#687787;
     line-height:1.8;
+    margin-bottom:60px;
 }
+
+/* Galerie */
 
 .galerie-travaux{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
 }
 
-/* Carte */
+/* Cartes */
 
 .galerie-travaux figure{
+
     position:relative;
     overflow:hidden;
-    margin:0;
-    border-radius:18px;
+    border-radius:20px;
     background:#fff;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-    cursor:pointer;
+    margin:0;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    animation:cardAppear .9s ease forwards;
 
     opacity:0;
-    animation:fadeUp .8s forwards;
 
     transition:
-        transform .45s ease,
-        box-shadow .45s ease;
+    transform .45s,
+    box-shadow .45s;
 }
 
+/* délais */
+
 .galerie-travaux figure:nth-child(2){
-    animation-delay:.2s;
+animation-delay:.2s;
 }
 
 .galerie-travaux figure:nth-child(3){
-    animation-delay:.4s;
+animation-delay:.4s;
 }
 
 .galerie-travaux figure:nth-child(4){
-    animation-delay:.6s;
+animation-delay:.6s;
 }
 
-/* Image */
+/* Images */
 
 .galerie-travaux img{
+
     width:100%;
-    height:320px;
+    height:340px;
     object-fit:cover;
     display:block;
-    transition:transform .8s ease;
+
+    transition:
+    transform .8s ease,
+    filter .8s ease;
 }
 
-.galerie-travaux figure:hover img{
-    transform:scale(1.12);
-}
-
-/* Carte hover */
-
-.galerie-travaux figure:hover{
-    transform:translateY(-10px);
-    box-shadow:0 25px 50px rgba(0,0,0,.20);
-}
-
-/* Légende */
+/* Overlay */
 
 .galerie-travaux figcaption{
+
     position:absolute;
     left:0;
     right:0;
     bottom:0;
 
-    padding:22px;
+    padding:25px;
+
+    background:linear-gradient(to top,
+    rgba(6,33,53,.95),
+    rgba(6,33,53,.35),
+    transparent);
 
     color:#fff;
     font-size:17px;
     font-weight:600;
 
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.90),
-        rgba(0,0,0,.55),
-        transparent
-    );
+    letter-spacing:.3px;
 
-    transform:translateY(100%);
-    transition:.45s ease;
+    transition:.5s;
 }
 
-.galerie-travaux figure:hover figcaption{
-    transform:translateY(0);
-}
-
-/* Effet de lumière */
+/* Effet lumière */
 
 .galerie-travaux figure::before{
 
     content:"";
 
     position:absolute;
-    top:0;
-    left:-170%;
 
-    width:60%;
-    height:100%;
+    inset:0;
 
     background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,.25),
+        transparent 70%
     );
 
-    transform:skewX(-25deg);
-
+    transform:translateX(-130%);
     transition:1s;
-
     z-index:2;
 }
 
-.galerie-travaux figure:hover::before{
-    left:170%;
+/* Bordure animée */
+
+.galerie-travaux figure::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:2px solid transparent;
+
+    border-radius:20px;
+
+    transition:.4s;
 }
 
-/* Animation */
+/************ DESKTOP ************/
 
-@keyframes fadeUp{
+@media (hover:hover){
 
-    from{
+.galerie-travaux figure:hover{
 
-        opacity:0;
-        transform:translateY(40px);
+    transform:translateY(-12px);
 
-    }
+    box-shadow:
+    0 28px 60px rgba(0,0,0,.18);
 
-    to{
+}
 
-        opacity:1;
-        transform:translateY(0);
+.galerie-travaux figure:hover img{
 
-    }
+    transform:scale(1.12);
+
+    filter:brightness(1.05);
+}
+
+.galerie-travaux figure:hover::before{
+
+    transform:translateX(130%);
+}
+
+.galerie-travaux figure:hover::after{
+
+    border-color:#0b6cae;
+}
+
+}
+
+/************ MOBILE ************/
+
+@media (hover:none){
+
+.galerie-travaux figure{
+
+    animation:floating 5s ease-in-out infinite;
+}
+
+.galerie-travaux figure:active{
+
+    transform:scale(.98);
+}
+
+.galerie-travaux img{
+
+    height:250px;
+}
+
+.galerie-travaux figcaption{
+
+    transform:none;
+    font-size:15px;
+}
+
+}
+
+/* Animation apparition */
+
+@keyframes cardAppear{
+
+0%{
+opacity:0;
+transform:translateY(60px) scale(.95);
+}
+
+100%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+}
+
+/* Animation flottante */
+
+@keyframes floating{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-6px);
+}
+
+100%{
+transform:translateY(0px);
+}
 
 }
 
@@ -983,72 +1058,29 @@
 @media(max-width:768px){
 
 .realisations{
-
-    padding:70px 20px;
-
+padding:70px 20px;
 }
 
-.realisations .section-title{
-
-    font-size:2rem;
-
+.section-title{
+font-size:2rem;
 }
 
-.realisations .section-sub{
-
-    font-size:.95rem;
-
+.section-sub{
+font-size:.95rem;
+margin-bottom:35px;
 }
 
 .galerie-travaux{
 
-    gap:20px;
+grid-template-columns:1fr;
 
-}
-
-.galerie-travaux img{
-
-    height:250px;
+gap:25px;
 
 }
 
 }
 
 </style>
-
-<section id="realisations" class="realisations">
-
-    <h2 class="section-title">Nos Réalisations</h2>
-
-    <p class="section-sub">
-        Découvrez quelques-unes de nos interventions de débouchage de canalisations,
-        curage haute pression et installation de pompes de relevage réalisées
-        en Île-de-France.
-    </p>
-
-    <div class="galerie-travaux">
-
-        <figure>
-            <img src="camion.jpg" alt="Débouchage de WC">
-            <figcaption>Débouchage de WC avant intervention</figcaption>
-        </figure>
-
-        <figure>
-            <img src="camion2.jpg" alt="Installation de pompe de relevage">
-            <figcaption>Installation d'une pompe de relevage</figcaption>
-        </figure>
-
-        
-
-        <figure>
-            <img src="Capture d’écran 2026-07-02 142124.png" alt="Poste de relevage">
-            <figcaption>Nettoyage d'un poste de relevage</figcaption>
-        </figure>
-
-    </div>
-
-</section>
-
   <!-- NOS TARIFS -->
   <section id="tarifs" class="tarifs">
     <h2 class="section-title">Nos Tarifs Canalisation</h2>
