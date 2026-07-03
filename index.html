@@ -808,29 +808,194 @@
     </div>
   </section>
 
-  <!-- NOS RÉALISATIONS -->
-  <section id="realisations" class="realisations">
+ <!-- =========================
+     NOS RÉALISATIONS
+========================= -->
+
+<style>
+/* =========================
+   NOS RÉALISATIONS
+========================= */
+
+.realisations{
+    padding:90px 8%;
+    background:#f8fafc;
+}
+
+.realisations .section-title{
+    text-align:center;
+    font-size:2.5rem;
+    color:#0f3d5e;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.realisations .section-sub{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 60px;
+    color:#6b7280;
+    font-size:1.05rem;
+    line-height:1.7;
+}
+
+.galerie-travaux{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.galerie-travaux figure{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    margin:0;
+    background:#fff;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.45s ease;
+
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp .8s forwards;
+}
+
+.galerie-travaux figure:nth-child(2){
+    animation-delay:.15s;
+}
+
+.galerie-travaux figure:nth-child(3){
+    animation-delay:.3s;
+}
+
+.galerie-travaux figure:nth-child(4){
+    animation-delay:.45s;
+}
+
+.galerie-travaux figure:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.18);
+}
+
+.galerie-travaux img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+    transition:transform .8s ease;
+}
+
+.galerie-travaux figure:hover img{
+    transform:scale(1.12);
+}
+
+.galerie-travaux figcaption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:20px;
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    background:linear-gradient(to top,
+    rgba(0,0,0,.88) 0%,
+    rgba(0,0,0,.55) 55%,
+    transparent 100%);
+    transform:translateY(100%);
+    transition:.45s ease;
+}
+
+.galerie-travaux figure:hover figcaption{
+    transform:translateY(0);
+}
+
+/* Effet de lumière */
+.galerie-travaux figure::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform:skewX(-25deg);
+    transition:1s;
+    z-index:2;
+}
+
+.galerie-travaux figure:hover::before{
+    left:170%;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+.realisations{
+    padding:70px 20px;
+}
+
+.realisations .section-title{
+    font-size:2rem;
+}
+
+.realisations .section-sub{
+    font-size:.95rem;
+}
+
+.galerie-travaux img{
+    height:250px;
+}
+
+}
+</style>
+
+<section id="realisations" class="realisations">
+
     <h2 class="section-title">Nos Réalisations</h2>
-    <p class="section-sub">Un aperçu de nos interventions de débouchage, curage et pompes de relevage réalisées en Île-de-France.</p>
+
+    <p class="section-sub">
+        Découvrez quelques-unes de nos interventions de débouchage de canalisations,
+        curage haute pression et installation de pompes de relevage réalisées en
+        Île-de-France.
+    </p>
+
     <div class="galerie-travaux">
-      <figure>
-        <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20135629.png" alt="WC bouché avant débouchage">
-        <figcaption>Débouchage WC avant intervention</figcaption>
-      </figure>
-      <figure>
-        <img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Pompe de relevage prête à être installée">
-        <figcaption>Installation d'une pompe de relevage</figcaption>
-      </figure>
-      <figure>
-        <img src="c1f6e5a7-14a1-45dc-9521-ccfb1df38ed2.jpeg" alt="Camion hydrocureuse Débouchage IDF en intervention">
-        <figcaption>Camion hydrocureuse sur intervention</figcaption>
-      </figure>
-      <figure>
-        <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20142124.png" alt="Poste de relevage encrassé avant nettoyage">
-        <figcaption>Poste de relevage avant nettoyage</figcaption>
-      </figure>
+
+        <figure>
+            <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20135629.png" alt="Débouchage WC">
+            <figcaption>Débouchage de WC avant intervention</figcaption>
+        </figure>
+
+        <figure>
+            <img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Pompe de relevage">
+            <figcaption>Installation d'une pompe de relevage</figcaption>
+        </figure>
+
+        <figure>
+            <img src="c1f6e5a7-14a1-45dc-9521-ccfb1df38ed2.jpeg" alt="Hydrocureuse">
+            <figcaption>Intervention avec camion hydrocureuse</figcaption>
+        </figure>
+
+        <figure>
+            <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20142124.png" alt="Poste de relevage">
+            <figcaption>Nettoyage d'un poste de relevage</figcaption>
+        </figure>
+
     </div>
-  </section>
+
+</section>
 
   <!-- NOS TARIFS -->
   <section id="tarifs" class="tarifs">
