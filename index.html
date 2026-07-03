@@ -810,166 +810,121 @@
 
  
 
-<style>
-
 /*==========================
-      NOS RÉALISATIONS
+
+    NOS RÉALISATIONS
+
 ==========================*/
-
+<style>
 .realisations{
+
     padding:90px 8%;
-    background:linear-gradient(180deg,#f8fbfd,#eef4f9);
+
+    background:#f8fafc;
+
 }
 
-.section-title{
+.realisations .section-title{
+
     text-align:center;
-    font-size:2.8rem;
-    color:#0b3d5d;
-    font-weight:700;
+
+    font-size:2.7rem;
+
+    color:#0f3d5e;
+
     margin-bottom:15px;
+
+    font-weight:700;
+
 }
 
-.section-sub{
-    max-width:850px;
-    margin:auto;
+.realisations .section-sub{
+
     text-align:center;
-    color:#687787;
-    line-height:1.8;
-    margin-bottom:60px;
-}
 
-/* Galerie */
+    max-width:850px;
+
+    margin:0 auto 60px;
+
+    color:#6b7280;
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+}
 
 .galerie-travaux{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
 }
 
-/* Cartes */
+/* Carte */
 
 .galerie-travaux figure{
 
     position:relative;
+
     overflow:hidden;
-    border-radius:20px;
-    background:#fff;
+
     margin:0;
 
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.08);
+    border-radius:18px;
 
-    animation:cardAppear .9s ease forwards;
+    background:#fff;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    cursor:pointer;
 
     opacity:0;
 
+    animation:fadeUp .8s forwards;
+
     transition:
-    transform .45s,
-    box-shadow .45s;
+
+        transform .45s ease,
+
+        box-shadow .45s ease;
+
 }
 
-/* délais */
-
 .galerie-travaux figure:nth-child(2){
-animation-delay:.2s;
+
+    animation-delay:.2s;
+
 }
 
 .galerie-travaux figure:nth-child(3){
-animation-delay:.4s;
+
+    animation-delay:.4s;
+
 }
 
 .galerie-travaux figure:nth-child(4){
-animation-delay:.6s;
+
+    animation-delay:.6s;
+
 }
 
-/* Images */
+/* Image */
 
 .galerie-travaux img{
 
     width:100%;
-    height:340px;
+
+    height:320px;
+
     object-fit:cover;
+
     display:block;
 
-    transition:
-    transform .8s ease,
-    filter .8s ease;
-}
-
-/* Overlay */
-
-.galerie-travaux figcaption{
-
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-
-    padding:25px;
-
-    background:linear-gradient(to top,
-    rgba(6,33,53,.95),
-    rgba(6,33,53,.35),
-    transparent);
-
-    color:#fff;
-    font-size:17px;
-    font-weight:600;
-
-    letter-spacing:.3px;
-
-    transition:.5s;
-}
-
-/* Effet lumière */
-
-.galerie-travaux figure::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        120deg,
-        transparent 30%,
-        rgba(255,255,255,.25),
-        transparent 70%
-    );
-
-    transform:translateX(-130%);
-    transition:1s;
-    z-index:2;
-}
-
-/* Bordure animée */
-
-.galerie-travaux figure::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border:2px solid transparent;
-
-    border-radius:20px;
-
-    transition:.4s;
-}
-
-/************ DESKTOP ************/
-
-@media (hover:hover){
-
-.galerie-travaux figure:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:
-    0 28px 60px rgba(0,0,0,.18);
+    transition:transform .8s ease;
 
 }
 
@@ -977,79 +932,123 @@ animation-delay:.6s;
 
     transform:scale(1.12);
 
-    filter:brightness(1.05);
+}
+
+/* Carte hover */
+
+.galerie-travaux figure:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.20);
+
+}
+
+/* Légende */
+
+.galerie-travaux figcaption{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    padding:22px;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.90),
+
+        rgba(0,0,0,.55),
+
+        transparent
+
+    );
+
+    transform:translateY(100%);
+
+    transition:.45s ease;
+
+}
+
+.galerie-travaux figure:hover figcaption{
+
+    transform:translateY(0);
+
+}
+
+/* Effet de lumière */
+
+.galerie-travaux figure::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-170%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:1s;
+
+    z-index:2;
+
 }
 
 .galerie-travaux figure:hover::before{
 
-    transform:translateX(130%);
-}
-
-.galerie-travaux figure:hover::after{
-
-    border-color:#0b6cae;
-}
+    left:170%;
 
 }
 
-/************ MOBILE ************/
+/* Animation */
 
-@media (hover:none){
+@keyframes fadeUp{
 
-.galerie-travaux figure{
+    from{
 
-    animation:floating 5s ease-in-out infinite;
-}
+        opacity:0;
 
-.galerie-travaux figure:active{
+        transform:translateY(40px);
 
-    transform:scale(.98);
-}
+    }
 
-.galerie-travaux img{
+    to{
 
-    height:250px;
-}
+        opacity:1;
 
-.galerie-travaux figcaption{
+        transform:translateY(0);
 
-    transform:none;
-    font-size:15px;
-}
-
-}
-
-/* Animation apparition */
-
-@keyframes cardAppear{
-
-0%{
-opacity:0;
-transform:translateY(60px) scale(.95);
-}
-
-100%{
-opacity:1;
-transform:translateY(0) scale(1);
-}
-
-}
-
-/* Animation flottante */
-
-@keyframes floating{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-6px);
-}
-
-100%{
-transform:translateY(0px);
-}
+    }
 
 }
 
@@ -1058,29 +1057,84 @@ transform:translateY(0px);
 @media(max-width:768px){
 
 .realisations{
-padding:70px 20px;
+
+    padding:70px 20px;
+
 }
 
-.section-title{
-font-size:2rem;
+.realisations .section-title{
+
+    font-size:2rem;
+
 }
 
-.section-sub{
-font-size:.95rem;
-margin-bottom:35px;
+.realisations .section-sub{
+
+    font-size:.95rem;
+
 }
 
 .galerie-travaux{
 
-grid-template-columns:1fr;
+    gap:20px;
 
-gap:25px;
+}
+
+.galerie-travaux img{
+
+    height:250px;
 
 }
 
 }
 
 </style>
+
+<section id="realisations" class="realisations">
+
+    <h2 class="section-title">Nos Réalisations</h2>
+
+    <p class="section-sub">
+
+        Découvrez quelques-unes de nos interventions de débouchage de canalisations,
+
+        curage haute pression et installation de pompes de relevage réalisées
+
+        en Île-de-France.
+
+    </p>
+
+    <div class="galerie-travaux">
+
+        <figure>
+
+            <img src="camion.jpg" alt="Débouchage de WC">
+
+            <figcaption>Débouchage de WC avant intervention</figcaption>
+
+        </figure>
+
+        <figure>
+
+            <img src="camion2.jpg" alt="Installation de pompe de relevage">
+
+            <figcaption>Installation d'une pompe de relevage</figcaption>
+
+        </figure>
+
+        
+
+        <figure>
+
+            <img src="Capture d’écran 2026-07-02 142124.png" alt="Poste de relevage">
+
+            <figcaption>Nettoyage d'un poste de relevage</figcaption>
+
+        </figure>
+
+    </div>
+
+</section>
   <!-- NOS TARIFS -->
   <section id="tarifs" class="tarifs">
     <h2 class="section-title">Nos Tarifs Canalisation</h2>
