@@ -51,7 +51,6 @@
     }
 
     *{ margin:0; padding:0; box-sizing:border-box; }
-
     html{ scroll-behavior:smooth; }
 
     body{
@@ -245,7 +244,7 @@
     .service-card h3{ color:var(--or); font-size:1.2rem; margin-bottom:10px; }
     .service-card p{ color:var(--texte-clair); font-size:0.95rem; }
 
-    /* ===== POMPES DE RELEVAGE (nouvelle section) ===== */
+    /* ===== POMPES DE RELEVAGE ===== */
     .relevage{
       background:var(--bleu-fonce);
       color:#fff;
@@ -305,7 +304,56 @@
       font-weight:600;
     }
 
-    /* ===== TARIFS (nouvelle section) ===== */
+    /* ===== NOS RÉALISATIONS ===== */
+    .realisations{
+      background:linear-gradient(to bottom right,#f8f9fb,#eaf3ff);
+      padding:80px 5%;
+    }
+    .galerie-travaux{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:20px;
+    }
+    .galerie-travaux figure{
+      border-radius:var(--radius);
+      overflow:hidden;
+      position:relative;
+      height:240px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+      transition:transform .35s ease, box-shadow .35s ease;
+    }
+    .galerie-travaux figure:hover{
+      transform:translateY(-8px);
+      box-shadow:0 16px 32px rgba(0,0,0,0.2);
+    }
+    .galerie-travaux img{
+      width:100%; height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+    .galerie-travaux figure:hover img{ transform:scale(1.08); }
+    .galerie-travaux figcaption{
+      position:absolute; left:0; right:0; bottom:0;
+      background:linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
+      color:#fff;
+      font-size:0.9rem;
+      font-weight:600;
+      padding:16px 16px 12px;
+      transform:translateY(100%);
+      transition:transform .35s ease;
+    }
+    .galerie-travaux figure:hover figcaption{ transform:translateY(0); }
+
+    @media (max-width:900px){
+      .galerie-travaux{ grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:768px){
+      .galerie-travaux{ grid-template-columns:1fr; }
+    }
+
+    /* ===== TARIFS ===== */
     .tarifs{
       background:linear-gradient(to bottom right,#fffdf8,#fbf3e3);
       padding:80px 5%;
@@ -682,7 +730,8 @@
     <div class="service-container">
       <div class="service-card">
         <div class="img-wrap">
-<img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20135629.png" alt="WC bouché avec eau stagnante avant débouchage">        </div>
+          <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20135629.png" alt="WC bouché avec eau stagnante avant débouchage">
+        </div>
         <div class="card-body">
           <h3>Débouchage de canalisations</h3>
           <p>Nous assurons le débouchage complet de toutes vos canalisations : éviers, lavabos, douches, WC et réseaux extérieurs. Grâce à nos équipements professionnels (furet électrique, hydrocureuse haute pression), nous éliminons durablement tout type d'obstruction.</p>
@@ -690,7 +739,8 @@
       </div>
       <div class="service-card">
         <div class="img-wrap">
-<img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Inspection d'un WC bouché avant intervention">        </div>
+          <img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Inspection d'un WC bouché avant intervention">
+        </div>
         <div class="card-body">
           <h3>Inspection &amp; diagnostic</h3>
           <p>Avant toute intervention, notre équipe effectue un diagnostic précis pour identifier fissures, bouchons ou déformations dans vos tuyaux, garantissant des réparations ciblées et sans casse inutile.</p>
@@ -698,7 +748,8 @@
       </div>
       <div class="service-card">
         <div class="img-wrap">
-<img src="c1f6e5a7-14a1-45dc-9521-ccfb1df38ed2.jpeg" alt="Camion hydrocureuse Débouchage IDF en intervention">        </div>
+          <img src="c1f6e5a7-14a1-45dc-9521-ccfb1df38ed2.jpeg" alt="Camion hydrocureuse Débouchage IDF en intervention">
+        </div>
         <div class="card-body">
           <h3>Urgence 24h/24</h3>
           <p>Une canalisation bouchée au milieu de la nuit ? Nos techniciens sont disponibles 24h/24 et 7j/7 pour toute urgence de débouchage, fuite ou refoulement d'eau, partout en Île-de-France.</p>
@@ -707,7 +758,7 @@
     </div>
   </section>
 
-  <!-- POMPES DE RELEVAGE (nouvelle section demandée) -->
+  <!-- POMPES DE RELEVAGE -->
   <section id="pompes-relevage" class="relevage">
     <h2 class="section-title">Pompes &amp; postes de relevage</h2>
     <p class="section-sub">De l'installation à la maintenance préventive, nous prenons en charge l'ensemble de vos équipements de relevage.</p>
@@ -755,81 +806,31 @@
         <p>Nous contrôlons l'état de vos installations et vous proposons des solutions adaptées pour optimiser leur performance et leur fiabilité.</p>
       </div>
     </div>
+  </section>
 
-   <style>
-/* ===== NOS RÉALISATIONS ===== */
-.realisations{
-  background:linear-gradient(to bottom right,#f8f9fb,#eaf3ff);
-  padding:80px 5%;
-}
-.galerie-travaux{
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:20px;
-}
-.galerie-travaux figure{
-  border-radius:var(--radius);
-  overflow:hidden;
-  position:relative;
-  height:240px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.12);
-  transition:transform .35s ease, box-shadow .35s ease;
-}
-.galerie-travaux figure:hover{
-  transform:translateY(-8px);
-  box-shadow:0 16px 32px rgba(0,0,0,0.2);
-}
-.galerie-travaux img{
-  width:100%; height:100%;
-  object-fit:cover;
-  transition:transform .5s ease;
-}
-.galerie-travaux figure:hover img{ transform:scale(1.08); }
-.galerie-travaux figcaption{
-  position:absolute; left:0; right:0; bottom:0;
-  background:linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
-  color:#fff;
-  font-size:0.9rem;
-  font-weight:600;
-  padding:16px 16px 12px;
-  transform:translateY(100%);
-  transition:transform .35s ease;
-}
-.galerie-travaux figure:hover figcaption{ transform:translateY(0); }
-
-@media (max-width:900px){
-  .galerie-travaux{ grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width:768px){
-  .galerie-travaux{ grid-template-columns:1fr; }
-}
-</style>
-
-<!-- NOS RÉALISATIONS -->
-<section id="realisations" class="realisations">
-  <h2 class="section-title">Nos Réalisations</h2>
-  <p class="section-sub">Un aperçu de nos interventions de débouchage, curage et pompes de relevage réalisées en Île-de-France.</p>
-  <div class="galerie-travaux">
-    <figure>
-      <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20135629.png" alt="WC bouché avant débouchage">
-      <figcaption>Débouchage WC avant intervention</figcaption>
-    </figure>
-    <figure>
-      <img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Pompe de relevage prête à être installée">
-      <figcaption>Installation d'une pompe de relevage</figcaption>
-    </figure>
-    <figure>
-      <img src="c1f6e5a7-14a1-45dc-9521-ccfb1df38ed2.jpeg" alt="Camion hydrocureuse Débouchage IDF en intervention">
-      <figcaption>Camion hydrocureuse sur intervention</figcaption>
-    </figure>
-    <figure>
-      <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20142124.png" alt="Poste de relevage encrassé avant nettoyage">
-      <figcaption>Poste de relevage avant nettoyage</figcaption>
-    </figure>
-  </div>
-</section> 
+  <!-- NOS RÉALISATIONS -->
+  <section id="realisations" class="realisations">
+    <h2 class="section-title">Nos Réalisations</h2>
+    <p class="section-sub">Un aperçu de nos interventions de débouchage, curage et pompes de relevage réalisées en Île-de-France.</p>
+    <div class="galerie-travaux">
+      <figure>
+        <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20135629.png" alt="WC bouché avant débouchage">
+        <figcaption>Débouchage WC avant intervention</figcaption>
+      </figure>
+      <figure>
+        <img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Pompe de relevage prête à être installée">
+        <figcaption>Installation d'une pompe de relevage</figcaption>
+      </figure>
+      <figure>
+        <img src="c1f6e5a7-14a1-45dc-9521-ccfb1df38ed2.jpeg" alt="Camion hydrocureuse Débouchage IDF en intervention">
+        <figcaption>Camion hydrocureuse sur intervention</figcaption>
+      </figure>
+      <figure>
+        <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20142124.png" alt="Poste de relevage encrassé avant nettoyage">
+        <figcaption>Poste de relevage avant nettoyage</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <!-- NOS TARIFS -->
   <section id="tarifs" class="tarifs">
@@ -1089,8 +1090,6 @@
       </div>
     </div>
   </section>
-
-  
 
   <!-- ABOUT -->
   <section class="about">
