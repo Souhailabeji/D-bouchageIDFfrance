@@ -305,11 +305,230 @@
       font-weight:600;
     }
 
-    /* ===== ZONES ===== */
-    .zones{ background:#f8f9fb; text-align:center; padding:70px 5%; }
-    .zones p{
-      font-size:1.05rem; color:var(--texte-clair);
-      max-width:800px; margin:0 auto; line-height:1.8;
+    /* ===== TARIFS (nouvelle section) ===== */
+    .tarifs{
+      background:linear-gradient(to bottom right,#fffdf8,#fbf3e3);
+      padding:80px 5%;
+    }
+    .tarifs-banner{
+      max-width:1100px;
+      margin:0 auto 50px;
+      background:var(--bleu-fonce);
+      color:#fff;
+      border-radius:50px;
+      padding:16px 30px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      gap:12px 26px;
+      text-align:center;
+      font-weight:600;
+      font-size:0.95rem;
+      box-shadow:0 10px 25px rgba(30,60,114,0.25);
+    }
+    .tarifs-banner span{ display:flex; align-items:center; gap:8px; }
+    .tarifs-banner i{ color:var(--or-clair); }
+    .tarifs-banner .sep{ opacity:0.4; }
+
+    .tarifs-groupe{
+      max-width:1150px;
+      margin:0 auto 55px;
+    }
+    .tarifs-groupe h3{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      color:var(--bleu-fonce);
+      font-size:1.3rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+      margin-bottom:24px;
+    }
+    .tarifs-groupe h3::after{
+      content:"";
+      flex:1;
+      height:2px;
+      background:repeating-linear-gradient(to right, var(--or) 0, var(--or) 6px, transparent 6px, transparent 12px);
+    }
+    .tarifs-groupe h3 i{
+      width:40px; height:40px;
+      background:var(--or);
+      color:#fff;
+      border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1rem;
+      flex-shrink:0;
+    }
+
+    .tarifs-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:22px;
+    }
+    .tarif-card{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:24px 26px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.07);
+      border-top:4px solid var(--or);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .tarif-card:hover{ transform:translateY(-6px); box-shadow:0 14px 28px rgba(0,0,0,0.13); }
+    .tarif-card h4{
+      color:var(--bleu-fonce);
+      font-size:1.05rem;
+      font-weight:700;
+      margin-bottom:14px;
+      min-height:48px;
+    }
+    .tarif-price{
+      color:var(--or);
+      font-size:1.9rem;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    .tarif-price sup{ font-size:0.9rem; font-weight:600; margin-left:4px; }
+    .tarif-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:var(--bleu-fonce);
+      color:#fff;
+      font-weight:700;
+      font-size:0.9rem;
+      padding:12px 18px;
+      border-radius:50px;
+      transition:background .2s ease, transform .2s ease;
+    }
+    .tarif-btn:hover{ background:var(--bleu-hover); transform:translateY(-2px); }
+
+    .tarif-conformite{
+      background:var(--bleu-fonce);
+      color:#fff;
+      border-radius:var(--radius);
+      padding:36px 34px;
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:30px;
+      align-items:center;
+      box-shadow:0 10px 26px rgba(30,60,114,0.25);
+    }
+    .tarif-conformite h4{ color:#fff; font-size:1.25rem; margin-bottom:12px; }
+    .tarif-conformite p{ color:#c7d7f2; font-size:0.95rem; margin-bottom:14px; }
+    .tarif-conformite ul li{
+      color:#dbe8ff;
+      font-size:0.9rem;
+      padding:6px 0 6px 26px;
+      position:relative;
+      border-bottom:none;
+    }
+    .tarif-conformite ul li::before{
+      content:"✔";
+      position:absolute; left:0; top:6px;
+      color:var(--or-clair);
+    }
+    .tarif-conformite-price{
+      text-align:center;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.22);
+      border-radius:14px;
+      padding:26px 18px;
+    }
+    .tarif-conformite-price span{
+      display:block;
+      font-size:1.5rem;
+      font-weight:800;
+      color:var(--or-clair);
+      margin-bottom:16px;
+    }
+    .tarif-conformite-price .cta-group{ display:flex; flex-direction:column; gap:10px; }
+    .tarif-conformite-price a{
+      padding:11px 14px;
+      border-radius:50px;
+      font-weight:700;
+      font-size:0.9rem;
+    }
+    .tarif-conformite-price a.appeler{ background:var(--or); color:#fff; }
+    .tarif-conformite-price a.appeler:hover{ background:var(--or-clair); }
+    .tarif-conformite-price a.devis{ background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.4); }
+    .tarif-conformite-price a.devis:hover{ background:rgba(255,255,255,0.22); }
+
+    /* ===== ZONES D'INTERVENTION ===== */
+    .zones{
+      background:var(--bleu-fonce);
+      color:#fff;
+      padding:80px 5%;
+    }
+    .zones .section-title{ color:#fff; }
+    .zones .section-sub{ color:#c7d7f2; }
+    .zones-wrap{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:0.9fr 1.3fr;
+      gap:50px;
+      align-items:center;
+    }
+    .zones-map{
+      position:relative;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:var(--radius);
+      padding:30px;
+      text-align:center;
+    }
+    .zones-map i{
+      font-size:3.5rem;
+      color:var(--or-clair);
+      margin-bottom:16px;
+    }
+    .zones-map h3{
+      font-size:1.6rem;
+      font-weight:800;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#fff;
+    }
+    .zones-map p{ color:#c7d7f2; font-size:0.9rem; margin-top:10px; }
+
+    .zones-block h4{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--or-clair);
+      font-size:1.05rem;
+      font-weight:700;
+      margin-bottom:16px;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    .zones-block{ margin-bottom:32px; }
+    .zones-block:last-child{ margin-bottom:0; }
+    .pill-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.3);
+      color:#fff;
+      padding:8px 16px;
+      border-radius:50px;
+      font-size:0.9rem;
+      font-weight:600;
+      transition:background .25s ease, transform .25s ease, border-color .25s ease;
+    }
+    .pill:hover{
+      background:var(--or);
+      border-color:var(--or);
+      transform:translateY(-2px);
     }
 
     /* ===== PRESTATIONS (texte long) ===== */
@@ -409,6 +628,8 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width:900px){
       .relevage-gallery{ grid-template-columns:repeat(2,1fr); }
+      .zones-wrap{ grid-template-columns:1fr; }
+      .tarif-conformite{ grid-template-columns:1fr; }
     }
     @media (max-width:768px){
       header{ justify-content:center; text-align:center; }
@@ -416,6 +637,7 @@
       .phone-floating{ display:flex; }
       .relevage-gallery{ grid-template-columns:1fr; }
       .prestations h1{ font-size:1.6rem; }
+      .tarifs-banner{ border-radius:20px; font-size:0.85rem; }
     }
   </style>
 </head>
@@ -550,13 +772,205 @@
     </div>
   </section>
 
+  <!-- NOS TARIFS -->
+  <section id="tarifs" class="tarifs">
+    <h2 class="section-title">Nos Tarifs Canalisation</h2>
+    <p class="section-sub">Prix nets, sans surprise. Choisissez la prestation qui vous concerne : un message part directement au 06 02 79 12 08 pour confirmer votre demande.</p>
+
+    <div class="tarifs-banner">
+      <span><i class="fa-solid fa-truck-fast"></i> Déplacement gratuit</span>
+      <span class="sep">•</span>
+      <span><i class="fa-solid fa-clock"></i> 24h/24 et 7j/7 sans majoration</span>
+      <span class="sep">•</span>
+      <span><i class="fa-solid fa-file-invoice"></i> Devis gratuit</span>
+    </div>
+
+    <!-- DÉBOUCHAGE -->
+    <div class="tarifs-groupe">
+      <h3><i class="fa-solid fa-toilet"></i> Débouchage</h3>
+      <div class="tarifs-grid">
+
+        <div class="tarif-card">
+          <div>
+            <h4>Débouchage / dégorgement de canalisation</h4>
+            <div class="tarif-price">190€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20D%C3%A9bouchage%20%2F%20d%C3%A9gorgement%20de%20canalisation%20%C2%BB%20%C3%A0%20190%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+        <div class="tarif-card">
+          <div>
+            <h4>Débouchage de vide-ordure</h4>
+            <div class="tarif-price">250€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20D%C3%A9bouchage%20de%20vide-ordure%20%C2%BB%20%C3%A0%20250%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+        <div class="tarif-card">
+          <div>
+            <h4>Nettoyage / Pompage par aspirateur</h4>
+            <div class="tarif-price">220€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20Nettoyage%20%2F%20Pompage%20par%20aspirateur%20%C2%BB%20%C3%A0%20220%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CURAGE -->
+    <div class="tarifs-groupe">
+      <h3><i class="fa-solid fa-water"></i> Curage</h3>
+      <div class="tarifs-grid">
+
+        <div class="tarif-card">
+          <div>
+            <h4>Curage de canalisation jusqu'à 10 m</h4>
+            <div class="tarif-price">250€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20Curage%20de%20canalisation%20jusqu%27%C3%A0%2010%20m%20%C2%BB%20%C3%A0%20250%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+        <div class="tarif-card">
+          <div>
+            <h4>Curage, mètre linéaire supplémentaire</h4>
+            <div class="tarif-price">20€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20Curage%2C%20m%C3%A8tre%20lin%C3%A9aire%20suppl%C3%A9mentaire%20%C2%BB%20%C3%A0%2020%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- POMPAGE -->
+    <div class="tarifs-groupe">
+      <h3><i class="fa-solid fa-truck-droplet"></i> Pompage</h3>
+      <div class="tarifs-grid">
+
+        <div class="tarif-card">
+          <div>
+            <h4>Pompage fosse septique jusqu'à 1 m³</h4>
+            <div class="tarif-price">300€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20Pompage%20fosse%20septique%20jusqu%27%C3%A0%201%20m3%20%C2%BB%20%C3%A0%20300%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+        <div class="tarif-card">
+          <div>
+            <h4>Pompage bac à graisse jusqu'à 1 m³</h4>
+            <div class="tarif-price">300€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20Pompage%20bac%20%C3%A0%20graisse%20jusqu%27%C3%A0%201%20m3%20%C2%BB%20%C3%A0%20300%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INSPECTION VIDÉO -->
+    <div class="tarifs-groupe">
+      <h3><i class="fa-solid fa-video"></i> Inspection vidéo</h3>
+      <div class="tarifs-grid">
+
+        <div class="tarif-card">
+          <div>
+            <h4>Inspection sans rapport</h4>
+            <div class="tarif-price">350€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20Inspection%20sans%20rapport%20%C2%BB%20%C3%A0%20350%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+        <div class="tarif-card">
+          <div>
+            <h4>Inspection avec rapport</h4>
+            <div class="tarif-price">450€<sup>TTC</sup></div>
+          </div>
+          <a class="tarif-btn" href="sms:0602791208?&body=Bonjour%2C%20je%20confirme%20le%20tarif%20%C2%AB%20Inspection%20avec%20rapport%20%C2%BB%20%C3%A0%20450%E2%82%AC%20TTC.%20Merci%20de%20me%20rappeler.">
+            <i class="fa-solid fa-phone-volume"></i> Être rappelé
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MISE EN CONFORMITÉ -->
+    <div class="tarifs-groupe">
+      <h3><i class="fa-solid fa-stamp"></i> Mise en conformité</h3>
+      <div class="tarif-conformite">
+        <div>
+          <h4>Une estimation adaptée à votre installation</h4>
+          <p>Le prix d'une mise en conformité dépend du rapport SPANC, du terrain, de l'accès et des travaux à réaliser. Un échange rapide permet d'obtenir une estimation fiable avant intervention.</p>
+          <ul>
+            <li>Estimation personnalisée</li>
+            <li>Prix expliqué avant travaux</li>
+            <li>Accompagnement jusqu'à la conformité</li>
+          </ul>
+        </div>
+        <div class="tarif-conformite-price">
+          <span>Sur devis</span>
+          <div class="cta-group">
+            <a class="appeler" href="tel:0602791208"><i class="fa-solid fa-phone"></i> Appeler pour estimer</a>
+            <a class="devis" href="sms:0602791208?&body=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20mise%20en%20conformit%C3%A9.%20Merci%20de%20me%20rappeler.">
+              <i class="fa-solid fa-file-signature"></i> Demander un devis
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ZONES D'INTERVENTION -->
   <section class="zones">
     <h2 class="section-title">Zones d'intervention en Île-de-France</h2>
-    <p>
-      Paris • Hauts-de-Seine (92) • Seine-Saint-Denis (93) • Val-de-Marne (94)<br>
-      Yvelines (78) • Essonne (91) • Val-d'Oise (95)
-    </p>
+    <p class="section-sub">Nos équipes interviennent rapidement dans toute la région, pour les particuliers, les professionnels et les copropriétés.</p>
+
+    <div class="zones-wrap">
+      <div class="zones-map">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <h3>Île-de-France</h3>
+        <p>Intervention en moins de 30 minutes selon votre localisation, 24h/24 et 7j/7.</p>
+      </div>
+
+      <div>
+        <div class="zones-block">
+          <h4><i class="fa-solid fa-location-dot"></i> Paris (75) — tous les arrondissements</h4>
+          <div class="pill-list">
+            <span class="pill">1er</span><span class="pill">2e</span><span class="pill">3e</span><span class="pill">4e</span>
+            <span class="pill">5e</span><span class="pill">6e</span><span class="pill">7e</span><span class="pill">8e</span>
+            <span class="pill">9e</span><span class="pill">10e</span><span class="pill">11e</span><span class="pill">12e</span>
+            <span class="pill">13e</span><span class="pill">14e</span><span class="pill">15e</span><span class="pill">16e</span>
+            <span class="pill">17e</span><span class="pill">18e</span><span class="pill">19e</span><span class="pill">20e</span>
+          </div>
+        </div>
+
+        <div class="zones-block">
+          <h4><i class="fa-solid fa-location-dot"></i> Départements couverts</h4>
+          <div class="pill-list">
+            <span class="pill">Hauts-de-Seine (92)</span>
+            <span class="pill">Seine-Saint-Denis (93)</span>
+            <span class="pill">Val-de-Marne (94)</span>
+            <span class="pill">Yvelines (78)</span>
+            <span class="pill">Essonne (91)</span>
+            <span class="pill">Val-d'Oise (95)</span>
+            <span class="pill">Seine-et-Marne (77)</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- PRESTATIONS DÉTAILLÉES -->
@@ -624,13 +1038,6 @@
       <p class="section-sub">
         Parce que nous savons qu'une canalisation bouchée ou une pompe de relevage en panne est une urgence, notre équipe met tout en œuvre pour intervenir rapidement, proprement et efficacement.
       </p>
-
-      
-           
-
-        
-
-      
     </div>
   </section>
 
