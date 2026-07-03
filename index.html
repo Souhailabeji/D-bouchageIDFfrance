@@ -756,18 +756,80 @@
       </div>
     </div>
 
-    <div class="relevage-gallery">
-      <figure>
-        <img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Pompe de relevage prête à être installée">
-        <figcaption>Installation d'une pompe de relevage</figcaption>
-      </figure>
-      <figure>
-        <img src="Capture d’écran 2026-07-02 142124.png" alt="Poste de relevage encrassé avant nettoyage">
-        <figcaption>Poste de relevage avant nettoyage</figcaption>
-      </figure>
-      
-    </div>
-  </section> 
+   <style>
+/* ===== NOS RÉALISATIONS ===== */
+.realisations{
+  background:linear-gradient(to bottom right,#f8f9fb,#eaf3ff);
+  padding:80px 5%;
+}
+.galerie-travaux{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+.galerie-travaux figure{
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  height:240px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.galerie-travaux figure:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 32px rgba(0,0,0,0.2);
+}
+.galerie-travaux img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.galerie-travaux figure:hover img{ transform:scale(1.08); }
+.galerie-travaux figcaption{
+  position:absolute; left:0; right:0; bottom:0;
+  background:linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
+  color:#fff;
+  font-size:0.9rem;
+  font-weight:600;
+  padding:16px 16px 12px;
+  transform:translateY(100%);
+  transition:transform .35s ease;
+}
+.galerie-travaux figure:hover figcaption{ transform:translateY(0); }
+
+@media (max-width:900px){
+  .galerie-travaux{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:768px){
+  .galerie-travaux{ grid-template-columns:1fr; }
+}
+</style>
+
+<!-- NOS RÉALISATIONS -->
+<section id="realisations" class="realisations">
+  <h2 class="section-title">Nos Réalisations</h2>
+  <p class="section-sub">Un aperçu de nos interventions de débouchage, curage et pompes de relevage réalisées en Île-de-France.</p>
+  <div class="galerie-travaux">
+    <figure>
+      <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20135629.png" alt="WC bouché avant débouchage">
+      <figcaption>Débouchage WC avant intervention</figcaption>
+    </figure>
+    <figure>
+      <img src="ee9cabf7-8a0d-4062-9806-a5443b5cc7e2.jpeg" alt="Pompe de relevage prête à être installée">
+      <figcaption>Installation d'une pompe de relevage</figcaption>
+    </figure>
+    <figure>
+      <img src="c1f6e5a7-14a1-45dc-9521-ccfb1df38ed2.jpeg" alt="Camion hydrocureuse Débouchage IDF en intervention">
+      <figcaption>Camion hydrocureuse sur intervention</figcaption>
+    </figure>
+    <figure>
+      <img src="Capture%20d%E2%80%99%C3%A9cran%202026-07-02%20142124.png" alt="Poste de relevage encrassé avant nettoyage">
+      <figcaption>Poste de relevage avant nettoyage</figcaption>
+    </figure>
+  </div>
+</section> 
 
   <!-- NOS TARIFS -->
   <section id="tarifs" class="tarifs">
